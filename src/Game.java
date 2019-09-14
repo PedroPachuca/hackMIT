@@ -14,6 +14,11 @@ public class Game extends JPanel
 	public Player[] players;
 
 	public Platform floor;
+	
+	public Platform step1;
+	public Platform step2;
+	public Platform step3;
+	public Platform step4;
 
 	public JFrame frame;
 
@@ -38,6 +43,10 @@ public class Game extends JPanel
 	public Sprite spriteA3;
 	public Sprite spriteA4;
 	public Sprite spriteStage;
+	public Sprite stepStage1;
+	public Sprite stepStage2;
+	public Sprite stepStage3;
+	public Sprite stepStage4;
 	public Sprite spriteBackground;
 
 	public Game()
@@ -51,6 +60,13 @@ public class Game extends JPanel
 		spritePlayer2r = new Sprite("src/playerImages/angrybeaver.png", 160, 80, 80, 60);
 		
 		spriteStage = new Sprite("src/playerImages/stage1.png", 1000, 150, 500, 0);
+		
+		stepStage1 = new Sprite("src/playerImages/step.png", 100, 100, 900, -200);
+		stepStage2 = new Sprite("src/playerImages/step.png", 100, 100, -800, -200);
+		stepStage3 = new Sprite("src/playerImages/step.png", 100, 100, -600, -200);
+		stepStage4 = new Sprite("src/playerImages/step.png", 100, 100, 700, -200);
+		
+		
 		spriteBackground = new Sprite("src/playerImages/mitback.jpg", 1920, 1080, 960, 540);
 		spriteA1 = new Sprite("src/playerImages/a1.png", 150, 150, 75, 75);
 		spriteA2 = new Sprite("src/playerImages/snowball.png", 70, 50, 35, 25);
@@ -74,6 +90,10 @@ public class Game extends JPanel
 		cpu2.set(players[1], players[0]);
 
 		floor = new Platform(spriteStage, this);
+		step1 = new Platform(stepStage1, this);
+		step2 = new Platform(stepStage2, this);
+		step3 = new Platform(stepStage3, this);
+		step4 = new Platform(stepStage4, this);
 
 		frame = new JFrame();
 		frame.getContentPane().add(this);
@@ -113,7 +133,12 @@ public class Game extends JPanel
 		players[1] = new Player(this, c2, spritePlayer2l, spritePlayer2r, 300, 100);
 
 		floor = new Platform(spriteStage, this);
-
+		step1 = new Platform(stepStage1, this);
+		step2 = new Platform(stepStage2, this);
+		step3 = new Platform(stepStage3, this);
+		step4 = new Platform(stepStage4, this);
+		
+		
 		// set up graphics
 		if (useGraphics)
 		{
@@ -189,6 +214,11 @@ public class Game extends JPanel
 		}
 		// floor
 		floor.draw(graphics);
+		step1.draw(graphics);
+		step2.draw(graphics);
+		step3.draw(graphics);
+		step4.draw(graphics);
+		
 	}
 }
 

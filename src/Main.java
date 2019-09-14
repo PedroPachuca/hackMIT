@@ -15,7 +15,7 @@ public class Main
 		{
 			game.update();
 			game.repaint();
-			Thread.sleep(16); // 60 fps
+			Thread.sleep(20); // 60 fps
 		}
 	}
 }
